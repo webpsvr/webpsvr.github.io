@@ -49,6 +49,8 @@ function animate() {
 
 	mesh.rotation.x += 0.005;
 	mesh.rotation.y += 0.01;
+	camera.rotation.x = acc.pitch;
+	camera.rotation.y = acc.yaw;
 
 	//renderer.render( scene, camera );
 	effect.render(scene, camera);

@@ -9,15 +9,22 @@ function init() {
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
 	camera.position.z = 800;
+	//var controls = new THREE.OrbitControls(camera);
 
 	scene = new THREE.Scene();
 
 	var texture = new THREE.TextureLoader().load( '/assets/textures/crate.gif' );
 
-	var geometry = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var geometry1 = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	/*var geometry2 = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var geometry3 = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var geometry4 = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var geometry5 = new THREE.BoxBufferGeometry( 200, 200, 200 );
+	var geometry6 = new THREE.BoxBufferGeometry( 200, 200, 200 );*/
+
 	var material = new THREE.MeshBasicMaterial( { map: texture } );
 
-	mesh = new THREE.Mesh( geometry, material );
+	mesh = new THREE.Mesh( geometry1, material );
 	scene.add( mesh );
 
 	renderer = new THREE.WebGLRenderer();
@@ -46,11 +53,12 @@ function onWindowResize() {
 function animate() {
 
 	requestAnimationFrame( animate );
+	//controls.update(); 
 
 	mesh.rotation.x += 0.005;
 	mesh.rotation.y += 0.01;
-	camera.rotation.x = acc.pitch;
-	camera.rotation.y = acc.yaw;
+	//camera.rotation.x = acc.pitch;
+	//camera.rotation.y = acc.yaw;
 
 	//renderer.render( scene, camera );
 	effect.render(scene, camera);

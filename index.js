@@ -8,7 +8,7 @@ const app = express();
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
-app.use("/client", express.static(path.join(__dirname, 'client')));
+app.use("/js", express.static(path.join(__dirname, 'js')));
 app.use("/instruction", express.static(path.join(__dirname, 'instruction')));
 app.use("/lib", express.static(path.join(__dirname, 'lib')));
 app.use("/stylesheets", express.static(path.join(__dirname, 'stylesheets')));

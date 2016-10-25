@@ -9,7 +9,7 @@ function main() {
   console.log(checker.ua);
   dataView.textContent = JSON.stringify(checker.ua, null, "  ");
   dataView.textContent += "\n---------\n Available APIs \n";
-  dataView.textContent += JSON.stringify(checker.availableAPIs(), null, "  ");
+  dataView.textContent += JSON.stringify(checker.apis, null, "  ");
 
   if (checker.warnings) {
     alertView.textContent += JSON.stringify(checker.warnings, null, "  ");

@@ -7,7 +7,7 @@ function main() {
 
 function findDevice() { 
   navigator.usb.requestDevice({filters: [
-    { vendorId: 0x2a03}
+    { vendorId: 1356 }
   ]})
   .then(device => {
     console.log("device found ", device); 
